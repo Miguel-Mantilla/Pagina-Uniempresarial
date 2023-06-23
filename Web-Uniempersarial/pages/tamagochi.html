@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tamagotchi</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tamagotchi</h1>
+    <div id="tamagotchi">
+      <img id="image" src="tamagotchi.png" alt="Tamagotchi">
+      <div id="status">
+        <p id="hunger">Hambre: 0</p>
+        <p id="happiness">Felicidad: 0</p>
+      </div>
+      <div id="buttons">
+        <button onclick="feed()">Alimentar</button>
+        <button onclick="play()">Jugar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var hungerLevel = 0;
+    var happinessLevel = 0;
+
+    function feed() {
+      hungerLevel--;
+      updateStatus();
+    }
+
+    function play() {
+      happinessLevel++;
+      updateStatus();
+    }
+
+    function updateStatus() {
+      document.getElementById("hunger").textContent = "Hambre: " + hungerLevel;
+      document.getElementById("happiness").textContent = "Felicidad: " + happinessLevel;
+    }
+  </script>
+</body>
+</html>
